@@ -1,0 +1,17 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+data|stem||43fae4011a0626f4|136bf5e07fbd9b1c|1588979285||t19507.4156436737s||0|rds|local|vector|||1.22||nie udało się znaleźć funkcji tibble
+data_L1|stem|6ff936644830a8ba|cddc0a0526f41ac8|d381f942aa6f141c|-29743050||t19507.4255567678s|fd3d94fe2afecb96|520|rds|local|vector|||0.01||
+data_L2|stem|dee00b14289ca3cb|f247992b6489f547|d381f942aa6f141c|1327057395||t19507.4255570457s|a5459509b7332ca9|501|rds|local|vector|||0.02||
+diag_plot_L1|stem|861074f976d2cf4c|d5be44d1fcb407fd|d23dc5f64c9db668|87125062||t19507.5608023738s|a413d9f323be407e|181905|rds|local|vector|||0.78||
+diag_plot_L2|stem|62b73472c2f9b317|c86f1c71c59a884e|d73546c445f303a6|337119763||t19507.5608031219s|a44243cd6c1cd3a0|179947|rds|local|vector|||0.78||
+disp_L1|stem||06d941b172137649|2656a148c55a18a9|1745495471||t19507.4255621887s||0|rds|local|vector|||0|brak argumentów w min zwracanie wartości Inf. brak argumentów w max zwracanie wartości Inf|from musi być skończoną liczbą
+file|stem|cda53a32e6edb06a|8ab1d5721ddee5f7|ef46db3751d8e999|-1301001980|./data/Data_mixedAnova.xlsx|t19437.3824194973s|94b97b992eeca2e5|10610|file|local|vector|||1.25||
+fit_poisson_model|function|dbc6ba33347c3021|||||||||||||||
+get_data|function|053ff8ebeae8ec85|||||||||||||||
+get_pvalues|function|6bcc92b2bca0942f|||||||||||||||
+model_diagnostics|function|d3d3475c7640eb0b|||||||||||||||
+model_L1|stem|578127d07b44efee|1a286ec231b8a40c|cf17b5cca83db57a|1176178102||t19507.4255620116s|199bd2cf62ca942e|146246|rds|local|vector|||0.27||
+model_L2|stem|8a68fd0f707aa117|9e29f91354d6ba9b|63d8c2254f76dae5|1793742676||t19507.4281282681s|a02896120e11f4f6|145706|rds|local|vector|||1.48||
+plot_model_diagnostics|function|c24615ec7516900c|||||||||||||||
+pvals_L1|stem|6f421e9d1ab1d108|091205559154578f|efb6415b1d596041|207104519||t19507.4281940068s|b601241f149cb9c9|353745|rds|local|vector|||6.42||
+pvals_L2|stem|92506665c5a5861e|badfa38e399ad8cf|faf2490b5efdabf1|843609575||t19507.4281986952s|d7e8aaec5cd31e91|351038|rds|local|vector|||5.92||
