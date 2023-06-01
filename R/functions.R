@@ -106,15 +106,19 @@ make_table <- function(pvals, language) {
 post_hocs <- function(model) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
+=======
+>>>>>>> test
 =======
 >>>>>>> test
   #create data.frames from post hocs objects 
   con1 <- as.data.frame(emmeans(model, pairwise~task|group, type = "response")$contrasts)
   con2 <- as.data.frame(emmeans(model, pairwise~group|task, type = "response")$contrasts)
   # rename colnames to be able to bind two post hocs data.frames
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -128,15 +132,22 @@ post_hocs <- function(model) {
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 =======
 >>>>>>> test
+=======
+  con1 <- as.data.frame(emmeans(model, pairwise~task|group, type = "response")$contrasts)
+  con2 <- as.data.frame(emmeans(model, pairwise~group|task, type = "response")$contrasts)
+>>>>>>> test
   con1$contrast <-  with(con1, paste0(contrast, " on ", group))
   con1$group <- NULL
   con2$contrast <-  with(con2, paste0(contrast, " on ", task))
   con2$task <- NULL
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
+=======
+>>>>>>> test
 =======
 >>>>>>> test
   # binding
@@ -156,17 +167,23 @@ post_hocs <- function(model) {
   # new names for columns
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> test
 =======
+=======
+>>>>>>> test
   con <- rbind(con1,con2)
   con <- as.data.table(con)
   con <- con[, !c("df", "null")]
   con[, p.value.adj := p.adjust(p.value, method = "holm")]
+<<<<<<< HEAD
 >>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
 <<<<<<< HEAD
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
+=======
+>>>>>>> test
 =======
 >>>>>>> test
   new_names <- c("Contrast", 
@@ -176,6 +193,7 @@ post_hocs <- function(model) {
                  "p value",
                  "Adjusted\np value")
 <<<<<<< HEAD
+<<<<<<< HEAD
   # set new names
   setnames(con, colnames(con), new_names)
 =======
@@ -188,6 +206,10 @@ post_hocs <- function(model) {
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 =======
 >>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
+>>>>>>> test
+=======
+  # set new names
+  setnames(con, colnames(con), new_names)
 >>>>>>> test
   con
 }
@@ -201,6 +223,7 @@ if (!dir.exists("./tables")) {
 caption <- paste0("Post-hoc tests for Poisson model for ",
                     language, ".")  
 <<<<<<< HEAD
+<<<<<<< HEAD
 footer <- ("Post-hoc tests adjusted with the use of the Holm's method.
 =======
 <<<<<<< HEAD
@@ -214,12 +237,16 @@ footer <- ("Post-hoc tests adjusted with the use of the Holm's method.\n
 footer <- ("Post-hoc tests adjusted with the use of the Holm's method.\n
 >>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
 >>>>>>> test
+=======
+footer <- ("Post-hoc tests adjusted with the use of the Holm's method.
+>>>>>>> test
            Tests were performed on the log scale.")
 # set path for saving table to word file
 path <- paste0("./tables/Table_post_hocs",
                "_",
                language,
                ".docx")
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -231,6 +258,9 @@ path <- paste0("./tables/Table_post_hocs",
 >>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 =======
 >>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
+>>>>>>> test
+=======
+
 >>>>>>> test
 # set defaults for table formatting
 set_flextable_defaults(
@@ -244,6 +274,7 @@ ft <- flextable(con) |>
   align(j = 1, align = "left", part = "body") |>
   align(j = 1, align = "left", part = "header") |>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -256,6 +287,10 @@ ft <- flextable(con) |>
   # format pvalues decimals 
   colformat_double(j = 5:6, digits = 3) |>
 >>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
+>>>>>>> test
+=======
+  # format pvalues decimals 
+  colformat_double(j = 5:6, digits = 3) |>
 >>>>>>> test
   # set caption
   set_caption(as_paragraph(as_chunk(caption, 
