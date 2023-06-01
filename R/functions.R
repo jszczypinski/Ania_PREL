@@ -104,20 +104,16 @@ make_table <- function(pvals, language) {
 }
 
 post_hocs <- function(model) {
-<<<<<<< HEAD
   #create data.frames from post hocs objects 
   con1 <- as.data.frame(emmeans(model, pairwise~task|group, type = "response")$contrasts)
   con2 <- as.data.frame(emmeans(model, pairwise~group|task, type = "response")$contrasts)
   # rename colnames to be able to bind two post hocs data.frames
-=======
   con1 <- as.data.frame(emmeans(model, pairwise~task|group, type = "response")$contrasts)
   con2 <- as.data.frame(emmeans(model, pairwise~group|task, type = "response")$contrasts)
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
   con1$contrast <-  with(con1, paste0(contrast, " on ", group))
   con1$group <- NULL
   con2$contrast <-  with(con2, paste0(contrast, " on ", task))
   con2$task <- NULL
-<<<<<<< HEAD
   # binding
   con <- rbind(con1,con2)
   # transform to a data.table
@@ -133,23 +129,18 @@ post_hocs <- function(model) {
   # format p.values
   con[, c("p.value", "p.value.adj")] <- con[, lapply(.SD, format_decimals), .SDcols = c("p.value", "p.value.adj")] 
   # new names for columns
-=======
   con <- rbind(con1,con2)
   con <- as.data.table(con)
   con <- con[, !c("df", "null")]
   con[, p.value.adj := p.adjust(p.value, method = "holm")]
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
   new_names <- c("Contrast", 
                  "Ratio", 
                  "SE", 
                  "Z ratio",
                  "p value",
                  "Adjusted\np value")
-<<<<<<< HEAD
   # set new names
   setnames(con, colnames(con), new_names)
-=======
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
   con
 }
 
@@ -161,21 +152,14 @@ if (!dir.exists("./tables")) {
 } 
 caption <- paste0("Post-hoc tests for Poisson model for ",
                     language, ".")  
-<<<<<<< HEAD
 footer <- ("Post-hoc tests adjusted with the use of the Holm's method.
-=======
-footer <- ("Post-hoc tests adjusted with the use of the Holm's method.\n
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
            Tests were performed on the log scale.")
 # set path for saving table to word file
 path <- paste0("./tables/Table_post_hocs",
                "_",
                language,
                ".docx")
-<<<<<<< HEAD
 
-=======
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
 # set defaults for table formatting
 set_flextable_defaults(
   font.family = "Times New Roman",
@@ -187,11 +171,8 @@ ft <- flextable(con) |>
   # change allignment of the first column
   align(j = 1, align = "left", part = "body") |>
   align(j = 1, align = "left", part = "header") |>
-<<<<<<< HEAD
-=======
   # format pvalues decimals 
   colformat_double(j = 5:6, digits = 3) |>
->>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
   # set caption
   set_caption(as_paragraph(as_chunk(caption, 
                                     props = fp_text_default(italic = TRUE)))) |>
