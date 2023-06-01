@@ -9,7 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("readxl", "data.table", "lme4", "afex", "DHARMa"), # packages that your targets need to run
+  packages = c("readxl", "data.table", "lme4", "afex", "DHARMa", "flextable"), # packages that your targets need to run
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -33,6 +33,8 @@ list(
   tar_target(model_L2, fit_poisson_model(data_L2)),
   tar_target(diag_plot_L1, plot_model_diagnostics(model_L1)),
   tar_target(diag_plot_L2, plot_model_diagnostics(model_L2)),
-  tar_target(pvals_L1, get_pvalues(model_L1, data_L1)),
-  tar_target(pvals_L2, get_pvalues(model_L2, data_L2))
+  tar_target(pvals_L1, get_pvalues(model_L1, data_L1, .nsim = 10000)),
+  tar_target(pvals_L2, get_pvalues(model_L2, data_L2, .nsim = 10000)),
+  tar_target(table_L1, make_table(pvals_L1, "polish")),
+  tar_target(table_L2, make_table(pvals_L2, "PJM"))
 )
