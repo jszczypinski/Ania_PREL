@@ -69,8 +69,8 @@ make_table <- function(pvals, language) {
   # new coulmn names
   new_names <- c("Effect", 
                  "Chi_square", 
-                 "DF", "P value", 
-                 "Bootstrapped\nP value")
+                 "DF", "p value", 
+                 "Bootstrapped\np value")
   # table caption
   caption <- paste0("Poisson analysis of variance for the number of correct responses 
                     in semantic and phonological task for ",
@@ -101,4 +101,80 @@ make_table <- function(pvals, language) {
     autofit() |>
     # save to docx
     save_as_docx(path = path)
+}
+
+post_hocs <- function(model) {
+  #create data.frames from post hocs objects 
+  con1 <- as.data.frame(emmeans(model, pairwise~task|group, type = "response")$contrasts)
+  con2 <- as.data.frame(emmeans(model, pairwise~group|task, type = "response")$contrasts)
+  # rename colnames to be able to bind two post hocs data.frames
+  con1$contrast <-  with(con1, paste0(contrast, " on ", group))
+  con1$group <- NULL
+  con2$contrast <-  with(con2, paste0(contrast, " on ", task))
+  con2$task <- NULL
+  # binding
+  con <- rbind(con1,con2)
+  # transform to a data.table
+  con <- as.data.table(con)
+  # remove unwanted columns
+  con <- con[, !c("df", "null")]
+  # add column with adjusted P.values
+  con[, p.value.adj := p.adjust(p.value, method = "holm")]
+  # function for formatting p.values
+  format_decimals <- function(value) {
+    value <- fifelse(value < 0.001, "< 0.001", as.character(round(value, 3)))
+  }
+  # format p.values
+  con[, c("p.value", "p.value.adj")] <- con[, lapply(.SD, format_decimals), .SDcols = c("p.value", "p.value.adj")] 
+  # new names for columns
+  new_names <- c("Contrast", 
+                 "Ratio", 
+                 "SE", 
+                 "Z ratio",
+                 "p value",
+                 "Adjusted\np value")
+  # set new names
+  setnames(con, colnames(con), new_names)
+  con
+}
+
+make_post_hoc_table <- function(con, language) {
+  
+# check for dir and create it if needed
+if (!dir.exists("./tables")) {
+  dir.create("./tables")
+} 
+caption <- paste0("Post-hoc tests for Poisson model for ",
+                    language, ".")  
+footer <- ("Post-hoc tests adjusted with the use of the Holm's method.
+           Tests were performed on the log scale.")
+# set path for saving table to word file
+path <- paste0("./tables/Table_post_hocs",
+               "_",
+               language,
+               ".docx")
+
+# set defaults for table formatting
+set_flextable_defaults(
+  font.family = "Times New Roman",
+  font.size = 10,
+  theme_fun = "theme_apa"
+)
+
+ft <- flextable(con) |>
+  # change allignment of the first column
+  align(j = 1, align = "left", part = "body") |>
+  align(j = 1, align = "left", part = "header") |>
+  # set caption
+  set_caption(as_paragraph(as_chunk(caption, 
+                                    props = fp_text_default(italic = TRUE)))) |>
+  # set footer
+  add_footer_row(as_paragraph(as_chunk(footer, 
+                                       props = fp_text_default(italic = TRUE))), 
+                 colwidths = c(6), 
+                 top = FALSE) |>
+  # fit the cell content
+  autofit() |>
+  # save to docx
+  save_as_docx(path = path)
 }
