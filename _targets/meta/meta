@@ -9,17 +9,39 @@ file|stem|cda53a32e6edb06a|8ab1d5721ddee5f7|ef46db3751d8e999|-1301001980|./data/
 fit_poisson_model|function|dbc6ba33347c3021|||||||||||||||
 get_data|function|053ff8ebeae8ec85|||||||||||||||
 get_pvalues|function|6bcc92b2bca0942f|||||||||||||||
+<<<<<<< HEAD
 make_post_hoc_table|function|480084253af63f75|||||||||||||||
+=======
+<<<<<<< HEAD
+make_post_hoc_table|function|480084253af63f75|||||||||||||||
+=======
+make_post_hoc_table|function|193b1f7245eedefa|||||||||||||||
+>>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
+>>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 make_table|function|1f9fe8a7b1ea248f|||||||||||||||
 model_diagnostics|function|d3d3475c7640eb0b|||||||||||||||
 model_L1|stem|578127d07b44efee|1a286ec231b8a40c|cf17b5cca83db57a|1176178102||t19507.4255620116s|199bd2cf62ca942e|146246|rds|local|vector|||0.27||
 model_L2|stem|8a68fd0f707aa117|9e29f91354d6ba9b|63d8c2254f76dae5|1793742676||t19507.4281282681s|a02896120e11f4f6|145706|rds|local|vector|||1.48||
 plot_model_diagnostics|function|c24615ec7516900c|||||||||||||||
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 post_hoc_L1|stem|be9e9e2402e86d2e|2df2fda137826b52|31c0c0911d4a457e|-1304197028||t19509.6107878414s|e43bb2164eaed994|552|rds|local|vector|||1.14||
 post_hoc_L2|stem|314bddbd2f43d840|9434d21d215645f9|8656961411ffcae7|-998363951||t19509.6107831187s|cce5fe8eabf2775f|556|rds|local|vector|||1.12||
 post_hoc_table_L1|stem|e68f2de53b5d0476|70eaaf9f4bc8a550|fe52bf3679f474f0|-34580874||t19509.6118552314s|3e4acf685da8f273|84|rds|local|vector|||2.62||
 post_hoc_table_L2|stem|a09824d83e9bee27|9de92c70e65509bc|1b25d28c9cc1bcc7|-1272757539||t19509.6118551421s|40b3a10246f0095b|83|rds|local|vector|||2.61||
 post_hocs|function|6676bda7bcd3232c|||||||||||||||
+<<<<<<< HEAD
+=======
+=======
+post_hoc_L1|stem|02893c7ab2a85885|2df2fda137826b52|df96b1853fb7500a|-1304197028||t19509.5893556583s|0866fc996243a4b5|568|rds|local|vector|||1.3||
+post_hoc_L2|stem|35990f56ecc74421|9434d21d215645f9|bffe8baa1575d3c2|-998363951||t19509.5893474802s|0866fc996243a4b5|568|rds|local|vector|||1.32||
+post_hoc_table_L1|stem|e68f2de53b5d0476|70eaaf9f4bc8a550|6d975bc8a9da5b63|-34580874||t19509.5893634339s|3e4acf685da8f273|84|rds|local|vector|||0.65||
+post_hoc_table_L2|stem|a09824d83e9bee27|9de92c70e65509bc|e7eef681379a1af2|-1272757539||t19509.5893551261s|40b3a10246f0095b|83|rds|local|vector|||0.64||
+post_hocs|function|057a7af5422b0769|||||||||||||||
+>>>>>>> 1b76e3215947bab3681d19f9d5f7ebb212370597
+>>>>>>> 317cf63 (Adding functions for estimating and plotting post-hoc tables)
 pvals_L1|stem|4030cc96e5aeb6be|a57585ee7ebe990b|efb6415b1d596041|207104519||t19509.4840180419s|bb9194e36505f536|1195942|rds|local|vector|||4863.25|Model failed to converge with maxgrad  0.00964841 tol  0.002, component 1. Model failed to converge with maxgrad  0.00215258 tol  0.002, component 1. Model failed to converge with maxgrad  0.0100966 tol  0.002, component 1. Model failed to converge with maxgrad  0.0109239 tol  0.002, component 1. Model failed to converge with maxgrad  0.0102158 tol  0.002, component 1. unable to evaluate scaled gradient. Model failed to converge degenerate  Hessian with 1 negative eigenvalues. Model failed to converge with maxgrad  0.0108245 tol  0.002, component 1. Model failed to converge with maxgrad  0.00458129 tol  0.002, component 1. Model failed to converge with maxgrad  0.0110784 tol  0.002, component 1. Model failed to converge with maxgrad  0.00905019 tol  0.002, component 1. Model failed to converge with maxgrad  0.0101184 tol  0.002, component 1. Model failed to converge with maxgrad  0.0113925 tol  0.002, component 1. Model failed to converge with maxgrad  0.00886108 tol  0.002, component 1. Model failed to converge with maxgrad  0.010001 tol  0.002, component 1. Model failed to converge with maxgrad  0.00940493 tol  0.002, component 1. Model failed to converge with maxgrad  0.00788984 tol  0.002, component 1. Model failed to converge with maxgrad  0.00304543 tol  0.002, component 1. Model failed to converge with maxgrad  0.0105598 tol  0.002, component 1. unable to evaluate scaled gradient. Model failed to converge degenerate  Hessian with 1 negative eigenvalues. Model failed to converge with maxgrad  0.00240316 tol  0.002, component 1. Model failed to converge with maxgrad  0.00242906 tol  0.002, component 1. Model failed to converge with maxgrad  0.00776056 tol  0.002, component 1. Model failed to converge with maxgrad  0.010508 tol  0.002, component 1. Model failed to converge with maxgrad  0.00894605 tol  0.002, component 1. Model failed to converge with maxgrad  0.00994893 to|
 pvals_L2|stem|3ff1df0177637dd4|430e2ebc654da9b8|faf2490b5efdabf1|843609575||t19509.4833914004s|1ee1865b3d260e2b|1193656|rds|local|vector|||4809.05|Model failed to converge with maxgrad  0.00977212 tol  0.002, component 1. Model failed to converge with maxgrad  0.00224215 tol  0.002, component 1. Model failed to converge with maxgrad  0.00845249 tol  0.002, component 1. Model failed to converge with maxgrad  0.00203665 tol  0.002, component 1. Model failed to converge with maxgrad  0.0109494 tol  0.002, component 1. Model failed to converge with maxgrad  0.00883949 tol  0.002, component 1. Model failed to converge with maxgrad  0.00901698 tol  0.002, component 1. Model failed to converge with maxgrad  0.0109119 tol  0.002, component 1. Model failed to converge with maxgrad  0.00992094 tol  0.002, component 1. Model failed to converge with maxgrad  0.00947871 tol  0.002, component 1. Model failed to converge with maxgrad  0.0119715 tol  0.002, component 1. Model failed to converge with maxgrad  0.0128585 tol  0.002, component 1. Model failed to converge with maxgrad  0.0121294 tol  0.002, component 1. Model failed to converge with maxgrad  0.0112517 tol  0.002, component 1. Model failed to converge with maxgrad  0.0117859 tol  0.002, component 1. Model failed to converge with maxgrad  0.0107172 tol  0.002, component 1. unable to evaluate scaled gradient. Model failed to converge degenerate  Hessian with 1 negative eigenvalues. Model failed to converge with maxgrad  0.0129455 tol  0.002, component 1. Model failed to converge with maxgrad  0.00266286 tol  0.002, component 1. Model failed to converge with maxgrad  0.00914991 tol  0.002, component 1. Model failed to converge with maxgrad  0.0101088 tol  0.002, component 1. Model failed to converge with maxgrad  0.0102086 tol  0.002, component 1. Model failed to converge with maxgrad  0.0115465 tol  0.002, component 1. Model failed to converge with maxgrad  0.00207619 tol  0.002, component 1. Model failed to converge with maxgrad  0.0121269 tol  0.002, component 1. Model|
 table_L1|stem|8a5bc36a5d22162a|183b58d8e0635c95|60ab66bffbafa7f1|175396509||t19509.5893585866s|0b52c5847220add9|82|rds|local|vector|||1.28||
